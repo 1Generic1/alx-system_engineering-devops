@@ -4,3 +4,4 @@ hello world- Write a script that prints “Hello, World”, followed by a new li
 3-twofiles -Display the content of /etc/passwd and /etc/hosts
 4-lastlines- Display the last 10 lines of /etc/passwd 
 5-firstlines- Display the first 10 lines of /etc/passwd
+Write a script that displays the third line of the file iacta.
