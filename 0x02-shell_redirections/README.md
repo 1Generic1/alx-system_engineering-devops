@@ -1,10 +1,17 @@
-hello world- Write a script that prints “Hello, World”, followed by a new line to the standard output.
+hello world- Write a script that prints “Hello, World”, followed by a new line to the standard output\
+
 1-confused_smiley- Write a script that displays a confused smiley (Ôo)
-#2-hellofile - Display the content of the /etc/passwd file
-3-twofiles -Display the content of /etc/passwd and /etc/hosts
+
+2-hellofile - Display the content of the /etc/passwd file
+
+3twofiles -Display the content of /etc/passwd and /etc/hosts
+
 4-lastlines- Display the last 10 lines of /etc/passwd 
+
 5-firstlines- Display the first 10 lines of /etc/passwd
-Write a script that displays the third line of the file iacta.
+Write a script that displays the third line of the file iacta
+
+
 6-third_line - Write a script that displays the third line of the file iacta.
 
 7-file - Write a shell script that creates a file named exactly \*\'Best School\'\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line
@@ -17,9 +24,5 @@ n\9-duplicate_last_line - Write a script that duplicates the last line of the fi
 11-directories - Write a script that counts the number of directories and sub-directories in the current directory The current and parent directories should not be taken into account, Hidden directories should be counted
 
 12-newest_files - Create a script that displays the 10 newest files in the current directory. One file per line Sorted from the newest to the oldest
-
-13-unique - Create a script that takes a list of words as input and prints only words that appear exactly once. Input format: One line, one word Output format: One line, one word Words should be sorted >> README.md
-echo -e n13-unique - Create a script that takes a list of words as input and prints only words that appear exactly once. Input format: One line, one word Output format: One line, one word Words should be sorted >> README.md
-echo -e n13-unique - Create a script that takes a list of words as input and prints only words that appear exactly once. Input format: One line, one word Output format: One line, one word Words should be sorted
 
 13-unique - Create a script that takes a list of words as input and prints only words that appear exactly once. Input format: One line, one word Output format: One line, one word Words should be sorted
