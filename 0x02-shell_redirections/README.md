@@ -35,3 +35,4 @@ n\9-duplicate_last_line - Write a script that duplicates the last line of the fi
 /n17-hidethisword - Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
 /n18-letteronly - Display all lines of the file /etc/ssh/sshd_config starting with a letter 
 /n19-AZ - Replace all characters A and c from input to Z and e respectively. 
+/n20-hiago - Create a script that removes all letters c and C from input.
