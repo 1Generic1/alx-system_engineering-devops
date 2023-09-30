@@ -2,10 +2,10 @@
 
 ## Resources
 
-	https://www.linfo.org/pid.html <br>
-	https://www.thegeekstuff.com/2012/03/linux-processes-environment/ <br>
-	https://www.educative.io/answers/what-are-linux-signals <br>
-	https://www.digitalocean.com/community/tutorials/process-management-in-linux <br>
+https://www.linfo.org/pid.html <br>
+https://www.thegeekstuff.com/2012/03/linux-processes-environment/ <br>
+https://www.educative.io/answers/what-are-linux-signals <br>
+https://www.digitalocean.com/community/tutorials/process-management-in-linux <br>
 
 ## Requirements
 
