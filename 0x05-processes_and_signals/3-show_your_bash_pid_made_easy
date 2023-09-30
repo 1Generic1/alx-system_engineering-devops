@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script  displays the PID, along with the process name,
+# of processes whose name contain the word bash.
+
+processes=$(lsof -F +p)
+for process in $processes; do
+	if [[ $process =~ "bash"]]; then
+		process_name=$(lsof -p $process -F +P)
+		echo "$process $process_name"
+	fi
+done
