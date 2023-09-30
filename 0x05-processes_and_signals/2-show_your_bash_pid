@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script displays lines containing the word "bash" and its PID.
+
+process_list=$(ps aux | grep "bash" | grep -v "grep")
+echo "$process_list"
