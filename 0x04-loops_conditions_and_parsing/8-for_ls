@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory with names modified.
+
+for file in *; do
+	if [ -f "$file" ] && [[ ! "$file" =~ ^\..* ]]; then
+		modified_name="${file#*-}"
+		echo "$modified_name"
+	fi
+done
