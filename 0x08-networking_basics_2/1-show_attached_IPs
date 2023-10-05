@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Use ifconfig to get network interface information
+ifconfig_output=$(ifconfig)
+ipv4_lines=$(echo "$ifconfig_output" | grep -Eo 'inet [0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
+echo "Active IPv4 IP addresses:"
+echo "$ipv4_lines"
