@@ -30,6 +30,7 @@ Learn Regular Expressions with simple, interactive exercises https://regexone.co
 	Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
 Example:
+	
 	sylvain@ubuntu$ ./0-simply_match_school.rb School | cat -e
 	School$
 	sylvain@ubuntu$ ./0-simply_match_school.rb "Best School" | cat -e
