@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# run apache on designated container
 # Start the Docker container
 docker run -p 8080:80 -d -it holbertonschool/265-0
 
