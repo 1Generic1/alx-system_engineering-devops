@@ -1,0 +1,27 @@
+# Start the Docker container
+docker run -p 8080:80 -d -it holbertonschool/265-0
+
+# Check the status of the Docker container
+docker ps
+
+# Connect to the Docker container bash
+docker exec -it <container_id> /bin/bash
+
+# Inside the Docker container, check the status of Apache
+service apache2 status
+
+# If Apache is not running, start it
+service apache2 start
+
+# Check the Apache error logs for any issues
+tail /var/log/apache2/error.log
+
+# Fix any configuration or runtime issues based on the error logs
+# For example, correct Apache configuration files, enable required modules, or address permission issues
+
+# Exit the Docker container bash
+exit
+
+# Curl the port 8080 again to check if the issue is resolved
+curl 0:8080
+
