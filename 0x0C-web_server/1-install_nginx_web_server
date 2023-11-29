@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 sudo apt-get -y  update
 sudo apt-get install -y nginx
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 sudo service nginx start
-sudo sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
-echo "<html><head><title>Hello World!</title></head><body><p>Hello World!</p></body></html>" | sudo tee /var/www/html/index.html > /dev/null
