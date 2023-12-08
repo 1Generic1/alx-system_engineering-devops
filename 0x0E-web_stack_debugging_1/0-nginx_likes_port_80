@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#a bebugging script to find out why the Nginx
+# installation is not listening to port 80
+
+nginx -t
+tail -f /var/log/nginx/error.log &
+netstat -tuln
+apt-get update
+apt-get install -y net-tools
+service nginx restart
+curl 0:80
