@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Takes a subdomain and a domain and returns information about the subdomain
+display_subdomain_info() {
+	local domain="$1"
+	local subdomain="$2"
+
+	if [ -z "$subdomain" ]; then
+		subdomains=("www" "lb-01" "web-01" "web-02")
+	else
+		subdomains=("$subdomain")
+	fi
+
+	for sub in "${subdomains[@]}"; do
+		result=$(dig +short $sub.$domain)
+		if [ -n "$result" ]; then
+			record_type=$(dig +short $sub.$domain | awk 'NR==1{print $4}')
+			destination=$(dig +short $sub.$domain)
+			echo "The subdomain $sub is a $record_type record and points to $destination"
+		fi
+	done
+}
+if [ "$#" -eq 1 ]; then
+	display_subdomain_info "$1"
+elif [ "$#" -eq 2 ]; then
+	display_subdomain_info "$1" "$2"
+else
+	echo "Usage: $0 domain [subdomain]"
+fi
