@@ -24,8 +24,8 @@ frontend for genericdevs.tech-http-frontend
     default_backend http_back
 
 frontend for genericdevs.tech-http-frontend
-    bind *:443 ssl crt
-    stats uri /haproxy/etc/letsencrypt/live/www.genericdevs.tech/fullchain.pem?stats
+    bind *:443 ssl crt /etc/letsencrypt/live/www.genericdevs.tech/fullchain.pem
+    http-request set-header X-Forwarded-Proto https
     default_backend http_back
 
 backend for genericdevs.tech-http-bankend
