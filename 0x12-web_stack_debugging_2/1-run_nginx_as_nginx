@@ -3,7 +3,7 @@
 # and it listens to port 8080
 
 # Update Nginx configuration to run as nginx user and create a backup
-sed -i.bak 's/user\s*=\s*www-data/user = nginx/g' /etc/nginx/nginx.conf
+sed -i.bak "s/user www-data/user nginx/g" /etc/nginx/nginx.conf
 # Update Nginx default site configuration to listen on port 8080 and create a backup
 sed -i.bak "s/80/8080/g" /etc/nginx/sites-available/default
 chmod 644 /etc/nginx/nginx.conf
