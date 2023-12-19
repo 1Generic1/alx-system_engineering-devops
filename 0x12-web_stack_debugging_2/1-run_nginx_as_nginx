@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
-# this script configures nginx not to run webservers as root
-# and it listens to port 8080
-
-# Update Nginx configuration to run as nginx user and create a backup
+# this script configs nginx not to run webservers as root listens to port 8080
 sed -i.bak "s/user www-data/user nginx/g" /etc/nginx/nginx.conf
-# Update Nginx default site configuration to listen on port 8080 and create a backup
 sed -i.bak "s/80/8080/g" /etc/nginx/sites-available/default
 chmod 644 /etc/nginx/nginx.conf
 pkill apache2
-# Restart Nginx to apply the changes
 service nginx restart
