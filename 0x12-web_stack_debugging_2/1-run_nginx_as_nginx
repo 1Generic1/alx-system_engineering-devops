@@ -7,6 +7,7 @@ sed -i.bak 's/user\s*=\s*www-data/user = nginx/g' /etc/nginx/nginx.conf
 
 # Update Nginx default site configuration to listen on port 8080 and create a backup
 sed -i.bak 's/listen\s*80;/listen 8080;/g' /etc/nginx/sites-available/default
-
+chmod 644 /etc/nginx/nginx.conf
+pkill apache2
 # Restart Nginx to apply the changes
 service nginx restart
