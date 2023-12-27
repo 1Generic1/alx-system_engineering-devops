@@ -14,7 +14,7 @@ MYSQL_DUMP_FILE="backup.sql"
 ARCHIVE_NAME="$(date +'%d-%m-%Y').tar.gz"
 
 # Dump all MySQL databases
-mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" --all-databases > "$MYSQL_DUMP_FILE"
+mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" --all-databases | gzip > "$MYSQL_DUMP_FILE"
 
 # Check if mysqldump was successful
 if [ $? -ne 0 ]; then
