@@ -2,23 +2,9 @@
 # This script generates a MySQL dump, creates a compressed archive,
 # and follows specific naming conventions for backup purposes.
 
-if [ "$#" -ne 1 ]; then
-	echo "Usage: $0 <mysql_password>"
-	exit 1
-fi
-
-# MySQL connection parameters
-MYSQL_USER="root"
-MYSQL_PASSWORD="$1"
-MYSQL_DUMP_FILE="backup.sql"
-ARCHIVE_NAME="$(date +'%d-%m-%Y').tar.gz"
-
-# Dump all MySQL databases
-mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" --all-databases | gzip > "$MYSQL_DUMP_FILE"
-
-# Create a compressed archive
-tar -czvf "$ARCHIVE_NAME" "$MYSQL_DUMP_FILE"
-
-# Clean up - remove the MySQL dump file
-rm "$MYSQL_DUMP_FILE"
-echo "Backup completed successfully. Archive: $ARCHIVE_NAME"
+mysqldump --all-databases -u root --password="$1" > backup.sql
+day=$(date +"%d")
+month=$(date +"%m")
+year=$(date +"%Y")
+file_name="$day-$month-$year.tar.gz"
+tar -czvf "$file_name" backup.sql
