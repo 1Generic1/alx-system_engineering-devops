@@ -16,20 +16,8 @@ ARCHIVE_NAME="$(date +'%d-%m-%Y').tar.gz"
 # Dump all MySQL databases
 mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" --all-databases | gzip > "$MYSQL_DUMP_FILE"
 
-# Check if mysqldump was successful
-if [ ! mysqldump_status = $? ]; then
-  echo "Error: MySQL dump failed."
-  exit 1
-fi
-
 # Create a compressed archive
 tar -czvf "$ARCHIVE_NAME" "$MYSQL_DUMP_FILE"
-
-# Check if tar was successful
-if [ ! tar_status = $? ]; then
-  echo "Error: Compression failed."
-  exit 1
-fi
 
 # Clean up - remove the MySQL dump file
 rm "$MYSQL_DUMP_FILE"
