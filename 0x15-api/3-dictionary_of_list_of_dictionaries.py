@@ -27,7 +27,7 @@ def get_todo_all_employees():
 
             tasks = [
                 {"username": user_name, "task": task['title'],
-                "completed": task['completed']}
+                 "completed": task['completed']}
                 for task in todos_data
                 ]
             all_tasks[user_id] = tasks
@@ -37,9 +37,9 @@ def get_todo_all_employees():
         print(f"Error: {e}")
         sys.exit(1)
 
+
 def export_to_json(data):
     filename = "todo_all_employees.json"
-    
     with open(filename, mode='w') as file:
         json.dump(data, file)
 
