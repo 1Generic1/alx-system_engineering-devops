@@ -39,7 +39,6 @@ def export_to_csv(user_id, username, tasks):
 
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
-        writer.writerow(["USER_ID", "USERNAME",
                         "TASK_COMPLETED_STATUS", "TASK_TITLE"])
 
         for task in tasks:
