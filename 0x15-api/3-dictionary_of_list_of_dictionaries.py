@@ -26,17 +26,16 @@ def get_todo_all_employees():
             todos_data = todos_response.json()
 
             tasks = [
-                {"username": user_name, "task": task['title'], "completed": task['completed']}
+                {"username": user_name, "task": task['title'],
+                "completed": task['completed']}
                 for task in todos_data
                 ]
             all_tasks[user_id] = tasks
         export_to_json(all_tasks)
 
-
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
         sys.exit(1)
-
 
 def export_to_json(data):
     filename = "todo_all_employees.json"
