@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-this script uses REST API for a given employee ID, 
+this script uses REST API for a given employee ID,
 returns information about his/her TODO list progress.
 """
 import requests
@@ -22,7 +22,7 @@ def get_employee_todo_progress(employee_id):
         total_tasks = len(todos_data)
 
         print("Employee {} is done with tasks({}/{}):"
-                .format(user_data['name'], len(completed_tasks), total_tasks))
+            .format(user_data['name'], len(completed_tasks), total_tasks))
 
         for task in completed_tasks:
             print(f"\t {task['title']}")
