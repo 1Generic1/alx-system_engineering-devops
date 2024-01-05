@@ -27,14 +27,14 @@ def get_employee_todo_progress(employee_id):
 
         for task in completed_tasks:
             print(f"\t {task['title']}")
-        export_to_csv(user_data['id'], user_data['username'], completed_tasks)
+        export_to_csv(user_data['id'], user_data['username'], todos_data)
 
     except requests.exceptions.RequestException as e:
         print(f"Error: {e}")
         sys.exit(1)
 
 
-def export_to_csv(user_id, username, completed_tasks):
+def export_to_csv(user_id, username, tasks):
     filename = f"{user_id}.csv"
 
     with open(filename, mode='w', newline='') as file:
@@ -42,7 +42,7 @@ def export_to_csv(user_id, username, completed_tasks):
         writer.writerow(["USER_ID", "USERNAME",
                         "TASK_COMPLETED_STATUS", "TASK_TITLE"])
 
-        for task in completed_tasks:
+        for task in tasks:
             completed_status = str(task['completed'])
             writer.writerow([user_id, username, completed_status, task['title']])
 
