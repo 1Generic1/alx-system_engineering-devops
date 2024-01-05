@@ -4,9 +4,9 @@ this script uses REST API for a given employee ID,
 returns information about his/her TODO list progress.
 and creates a json file with a unique format
 """
+import json
 import requests
 import sys
-import json
 
 
 def get_employee_todo_progress(employee_id):
@@ -42,7 +42,7 @@ def export_to_json(user_id, all_tasks):
     filename = f"{user_id}.json"
 
     with open(filename, mode='w') as file:
-        json.dump({user_id: all_tasks}, file, indent=2)
+        json.dump({user_id: all_tasks}, file)
 
 
 if __name__ == "__main__":
