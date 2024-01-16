@@ -26,6 +26,6 @@ v1.0.0 (by /u/firdaus_cartoon_jr)'}
                 post_title = post['data']['title']
                 print(post_title)
         else:
-            print(f"Error: {response.status_code}")
+            print(None)
     except Exception as e:
         print(f"An error occurred: {e}")
