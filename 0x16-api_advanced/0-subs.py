@@ -4,9 +4,11 @@ Contains the number_of_subscribers function
 """
 import requests
 
+
 def number_of_subscribers(subreddit):
     """
-    Queries the Reddit API and returns the number of subscribers for a given subreddit.
+    Queries the Reddit API and returns the
+    number of subscribers for a given subreddit.
 
     :param subreddit: The name of the subreddit.
     :return: The number of subscribers or 0 if the subreddit is invalid.
@@ -25,7 +27,7 @@ v1.0.0 (by /u/firdaus_cartoon_jr)'}
         elif response.status_code == 404:
             return 0
         else:
-            print(f"An error occurred: {e}")
+            print(f"An error occurred: {response.status_code}")
             return 0
     except Exception as e:
         print(f"An error occurred: {e}")
