@@ -20,11 +20,13 @@ def top_ten(subreddit):
 v1.0.0 (by /u/firdaus_cartoon_jr)'}
     try:
         response = requests.get(url, headers=headers)
+        response.raise_for_status()
         if response.status_code == 200:
             data = response.json()
-            for post in data['data']['children'][:10]:
-                post_title = post['data']['title']
-                print(post_title)
+            if 'data' in data and 'children' in data['data']:
+                for post in data['data']['children'][:10]:
+                    post_title = post['data']['title']
+                    print(post_title)
         else:
             print(None)
     except Exception as e:
