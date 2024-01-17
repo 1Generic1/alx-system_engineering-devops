@@ -18,18 +18,8 @@ def number_of_subscribers(subreddit):
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     headers = {'User-Agent': '0x16-api_advanced:project:\
 v1.0.0 (by /u/firdaus_cartoon_jr)'}
-    try:
-        response = requests.get(url, headers=headers, allow_redirects=False)
-        if response.status_code == 200:
-            data = response.json()
-            # Extract the number of subscribers
-            subscribers_count = data.get("data", {}).get("subscribers", 0)
-            return subscribers_count
-        elif response.status_code == 404:
-            return 0
-        else:
-            print(f"An error occurred: {response.status_code}")
-            return 0
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return 0
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    data = response.json()
+    # Extract the number of subscribers
+    subscribers_count = data.get("data", {}).get("subscribers", 0)
+    return subscribers_count
