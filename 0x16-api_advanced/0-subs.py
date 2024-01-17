@@ -23,7 +23,7 @@ v1.0.0 (by /u/firdaus_cartoon_jr)'}
         if response.status_code == 200:
             data = response.json()
             # Extract the number of subscribers
-            subscribers_count = data['data']['subscribers']
+            subscribers_count = data.get("data", {}).get("subscribers", 0)
             return subscribers_count
         elif response.status_code == 404:
             return 0
