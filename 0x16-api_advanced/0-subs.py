@@ -13,11 +13,11 @@ def number_of_subscribers(subreddit):
     :param subreddit: The name of the subreddit.
     :return: The number of subscribers or 0 if the subreddit is invalid.
     """
+    if subreddit is None or type(subreddit) is not str:
+        return 0
     url = f'https://www.reddit.com/r/{subreddit}/about.json'
     headers = {'User-Agent': '0x16-api_advanced:project:\
 v1.0.0 (by /u/firdaus_cartoon_jr)'}
-    if subreddit is None or type(subreddit) is not str:
-        return 0
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
         if response.status_code == 200:
