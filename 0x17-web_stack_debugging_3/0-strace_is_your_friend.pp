@@ -6,4 +6,4 @@ notify  => Service['apache2'],
 
 service {'apache2':
 ensure => 'running',
-} 
+}
